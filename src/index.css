@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	/* Colors */
+	/*#region HSL values */
+	--primary-color-values: 155 100% 100%;
+	--secondary-color-values: 218 12% 97%;
+	--accent-color-values: 166 100% 43%;
+
+	--text-color-values: 166 100% 13%;
+	--text-color-light-values: 0 0% 50%;
+
+	--success-color-values: 120 60% 55%;
+	--danger-color-values: 12 100% 55%;
+
+	--category-salary-color-values: 147 50% 50%;
+	--category-salary-color-light-values: 147 50% 90%;
+
+	--category-interest-color-values: 225 73% 50%;
+	--category-interest-color-light-values: 225 73% 90%;
+
+	--category-food-color-values: 120 61% 50%;
+	--category-food-color-light-values: 120 61% 90%;
+
+	--category-entertainment-color-values: 271 76% 50%;
+	--category-entertainment-color-light-values: 271 76% 90%;
+
+	--category-health-color-values: 348 83% 50%;
+	--category-health-color-light-values: 348 83% 90%;
+
+	--category-housing-color-values: 17 100% 50%;
+	--category-housing-color-light-values: 17 100% 90%;
+
+	--category-utilities-color-values: 207 44% 50%;
+	--category-utilities-color-light-values: 207 44% 90%;
+
+	--category-transportation-color-values: 33 100% 50%;
+	--category-transportation-color-light-values: 33 100% 90%;
+
+	--category-clothing-color-values: 330 100% 50%;
+	--category-clothing-color-light-values: 330 100% 90%;
+
+	--category-education-color-values: 45 100% 50%;
+	--category-education-color-light-values: 51 100% 90%;
+
+	--category-other-color-values: 0 0% 50%;
+	--category-other-color-light-values: 0 0% 90%;
+	/* #endregion */
+
+	/*#region Main colors */
+	--primary-color: hsl(var(--primary-color-values));
+	--secondary-color: hsl(var(--secondary-color-values));
+	--accent-color: hsl(var(--accent-color-values));
+
+	--text-color: hsl(var(--text-color-values));
+	--text-color-light: hsl(var(--text-color-light-values));
+
+	--success-color: hsl(var(--success-color-values));
+	--danger-color: hsl(var(--danger-color-values));
+
+	/* Catgory colors */
+	--category-salary-color: hsl(var(--category-salary-color-values));
+	--category-salary-color-light: hsl(var(--category-salary-color-light-values));
+
+	--category-interest-color: hsl(var(--category-interest-color-values));
+	--category-interest-color-light: hsl(var(--category-interest-color-light-values));
+
+	--category-food-color: hsl(var(--category-food-color-values));
+	--category-food-color-light: hsl(var(--category-food-color-light-values));
+
+	--category-entertainment-color: hsl(var(--category-entertainment-color-values));
+	--category-entertainment-color-light: hsl(var(--category-entertainment-color-light-values));
+
+	--category-health-color: hsl(var(--category-health-color-values));
+	--category-health-color-light: hsl(var(--category-health-color-light-values));
+
+	--category-housing-color: hsl(var(--category-housing-color-values));
+	--category-housing-color-light: hsl(var(--category-housing-color-light-values));
+
+	--category-utilities-color: hsl(var(--category-utilities-color-values));
+	--category-utilities-color-light: hsl(var(--category-utilities-color-light-values));
+
+	--category-transportation-color: hsl(var(--category-transportation-color-values));
+	--category-transportation-color-light: hsl(var(--category-transportation-color-light-values));
+
+	--category-clothing-color: hsl(var(--category-clothing-color-values));
+	--category-clothing-color-light: hsl(var(--category-clothing-color-light-values));
+
+	--category-education-color: hsl(var(--category-education-color-values));
+	--category-education-color-light: hsl(var(--category-education-color-light-values));
+
+	--category-other-color: hsl(var(--category-other-color-values));
+	--category-other-color-light: hsl(var(--category-other-color-light-values));
+	/* #endregion */
+
+	/* Border-radius */
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	background-color: var(--primary-color);
+}
+
+button {
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+input {
+	font-family: inherit;
+	font-size: 1rem;
+}

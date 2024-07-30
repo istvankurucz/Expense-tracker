@@ -1,0 +1,18 @@
+button {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	text-transform: capitalize;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border: none;
+	padding: 1rem 3rem;
+}
+
+.categories {
+	background-color: var(--secondary-color);
+}
+
+p {
+	color: var(--text-color);
+}
