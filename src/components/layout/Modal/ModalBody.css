@@ -1,0 +1,4 @@
+.modalBody {
+	padding-inline: var(--modal-px);
+	padding-block: 1rem;
+}

@@ -1,0 +1,15 @@
+.modalClose {
+	width: 2rem;
+	height: 2rem;
+	display: grid;
+	place-items: center;
+	flex-shrink: 0;
+	background-color: transparent;
+	border-radius: var(--br-pill);
+	border: none;
+	cursor: pointer;
+	transition: background-color 200ms ease;
+}
+.modalClose:hover {
+	background-color: var(--secondary-color);
+}

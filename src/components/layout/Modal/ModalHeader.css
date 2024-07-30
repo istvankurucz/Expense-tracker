@@ -1,0 +1,9 @@
+.modalHeader {
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: flex-start;
+	border-bottom: var(--modal-border);
+	padding-inline: var(--modal-px);
+	padding-block: 1rem;
+}

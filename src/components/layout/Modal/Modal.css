@@ -1,0 +1,10 @@
+.modal {
+	--modal-px: 2rem;
+	--modal-border: 0.1rem solid var(--grey-color);
+
+	width: clamp(300px, 95%, 600px);
+	max-height: 90%;
+	background-color: var(--primary-color);
+	border-radius: var(--br);
+	overflow-y: auto;
+}
