@@ -53,6 +53,12 @@
 	--hover-color: var(--info-color-dark);
 }
 
+.button--transparent {
+	--text-color: var(--text-color);
+	--bg-color: transparent;
+	--hover-color: transparent;
+}
+
 /* #endregion */
 
 /* #region Types */

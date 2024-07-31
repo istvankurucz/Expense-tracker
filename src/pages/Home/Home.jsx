@@ -4,6 +4,8 @@ import "./Home.css";
 import Button from "../../components/ui/Button/Button";
 import { faAppleWhole } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/ui/Spinner/Spinner";
+import Input from "../../components/form/Input/Input";
+import Checkbox from "../../components/form/Checkbox/Checkbox";
 
 function Home() {
 	return (
@@ -77,6 +79,41 @@ function Home() {
 			</div>
 
 			<Spinner size="3rem" variant="accent" text="tetxt text like loading..." />
+
+			<br />
+			<br />
+			<br />
+
+			<div className="inputs">
+				<Input label="Input" id="input" placeholder="Input" fullW required />
+				<br />
+				<Input
+					direction="horizontal"
+					variant="success"
+					label="Input"
+					id="input3"
+					placeholder="Input"
+				/>
+				<br />
+				<Input
+					variant="danger"
+					type="password"
+					label="Input"
+					id="input2"
+					placeholder="Input"
+					centered
+				/>
+				<br />
+			</div>
+
+			<form className="checkboxes">
+				<Checkbox label="Checkbox" required />
+				<br />
+				<br />
+				<br />
+
+				<button type="submit">submit</button>
+			</form>
 		</div>
 	);
 }
