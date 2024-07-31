@@ -1,0 +1,51 @@
+.spinner {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.spinner__shape {
+	--size: 1.5rem;
+
+	width: var(--size);
+	height: var(--size);
+	display: inline-block;
+	border: 0.3rem solid transparent;
+	border-top-color: var(--color);
+	border-radius: var(--br-pill);
+	animation: spin 750ms linear infinite;
+}
+@keyframes spin {
+	from {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 1;
+		rotate: 360deg;
+	}
+}
+
+.spinner__text {
+	color: var(--color);
+}
+
+/* #region Variants */
+.spinner--primary {
+	--color: var(--primary-color);
+}
+
+.spinner--secondary {
+	--color: var(--secondary-color);
+}
+
+.spinner--accent {
+	--color: var(--accent-color);
+}
+
+.spinner--info {
+	--color: var(--info-color);
+}
+/* #endregion */

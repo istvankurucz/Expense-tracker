@@ -5,12 +5,16 @@
 	backdrop-filter: blur(0.25rem);
 	position: fixed;
 	inset: 0;
-	top: -100%;
-	translate: 0 -1rem;
-	transition: translate 200ms ease;
+	bottom: 100%;
+}
+.overlay--show {
+	bottom: 0;
 }
 
-.overlay--show {
-	top: 0;
+.overlay > * {
+	translate: 0 -2rem;
+	transition: translate 300ms ease;
+}
+.overlay--show > * {
 	translate: 0 0;
 }

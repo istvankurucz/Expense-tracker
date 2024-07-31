@@ -19,15 +19,25 @@
 	/* Colors */
 	/*#region HSL values */
 	--primary-color-values: 155 100% 100%;
-	--secondary-color-values: 218 12% 97%;
+	--primary-color-dark-values: 155 100% 90%;
+
+	--secondary-color-values: 218 12% 95%;
+	--secondary-color-dark-values: 218 12% 85%;
+
 	--accent-color-values: 166 100% 43%;
+	--accent-color-dark-values: 166 100% 33%;
 
 	--text-color-values: 166 100% 10%;
 	--text-color-light-values: 0 0% 50%;
 
 	--success-color-values: 120 60% 55%;
+	--success-color-dark-values: 120 60% 45%;
+
 	--danger-color-values: 12 100% 55%;
-	--grey-color-values: 157 3% 85%;
+	--danger-color-dark-values: 12 100% 45%;
+
+	--info-color-values: 157 3% 85%;
+	--info-color-dark-values: 157 3% 75%;
 
 	--category-salary-color-values: 147 50% 50%;
 	--category-salary-color-light-values: 147 50% 90%;
@@ -65,16 +75,27 @@
 
 	/*#region Genaral colors */
 	--primary-color: hsl(var(--primary-color-values));
+	--primary-color-dark: hsl(var(--primary-color-dark-values));
+
 	--secondary-color: hsl(var(--secondary-color-values));
+	--secondary-color-dark: hsl(var(--secondary-color-dark-values));
+
 	--accent-color: hsl(var(--accent-color-values));
+	--accent-color-dark: hsl(var(--accent-color-dark-values));
+
 	--accent-color-gradient: hsl(182 100% 32%);
 
 	--text-color: hsl(var(--text-color-values));
 	--text-color-light: hsl(var(--text-color-light-values));
 
 	--success-color: hsl(var(--success-color-values));
+	--success-color-dark: hsl(var(--success-color-dark-values));
+
 	--danger-color: hsl(var(--danger-color-values));
-	--grey-color: hsl(var(--grey-color-values));
+	--danger-color-dark: hsl(var(--danger-color-dark-values));
+
+	--info-color: hsl(var(--info-color-values));
+	--info-color-dark: hsl(var(--info-color-dark-values));
 
 	/* Catgory colors */
 	--category-salary-color: hsl(var(--category-salary-color-values));
@@ -135,11 +156,15 @@ body {
 	color: var(--text-color);
 	background-color: var(--primary-color);
 }
+.body--fixed {
+	position: fixed;
+	padding-right: 15px;
+}
 
 button {
 	font-family: inherit;
 	font-size: 1rem;
-	font-weight: 500;
+	/* font-weight: 500; */
 	color: var(--text-color);
 }
 

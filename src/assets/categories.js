@@ -125,4 +125,4 @@ const categories = [
 	},
 ];
 
-export default categories;
+export default Object.freeze(categories);
