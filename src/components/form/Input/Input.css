@@ -59,7 +59,7 @@
 	align-items: center;
 	border: 0.1rem solid var(--info-color);
 	border-radius: var(--br);
-	padding: 0.4rem 1rem;
+	padding: 0.5rem 1rem;
 }
 .input__main:has(.input__input:not(:placeholder-shown)) {
 	border-color: var(--color);

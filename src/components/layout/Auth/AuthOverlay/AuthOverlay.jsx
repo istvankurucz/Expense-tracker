@@ -1,4 +1,4 @@
-import Overlay from "../Overlay";
+import Overlay from "../../Overlay/Overlay";
 import "./AuthOverlay.css";
 
 function AuthOverlay({ show, className, children }) {

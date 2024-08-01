@@ -1,0 +1,14 @@
+.authText {
+	font-size: var(--fs-s);
+	color: var(--info-color);
+}
+
+.authText--action {
+	margin-top: 1rem;
+}
+
+/* #region Types */
+.authText--centered {
+	text-align: center;
+}
+/* #endregion */

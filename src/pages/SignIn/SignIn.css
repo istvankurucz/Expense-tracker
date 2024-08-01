@@ -1,0 +1,5 @@
+.signin__divider {
+	height: 0.1rem;
+	background-color: var(--secondary-color);
+	border: none;
+}

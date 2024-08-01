@@ -21,8 +21,8 @@
 	--primary-color-values: 155 100% 100%;
 	--primary-color-dark-values: 155 100% 90%;
 
-	--secondary-color-values: 218 12% 95%;
-	--secondary-color-dark-values: 218 12% 85%;
+	--secondary-color-values: 218 12% 90%;
+	--secondary-color-dark-values: 218 12% 80%;
 
 	--accent-color-values: 166 100% 43%;
 	--accent-color-dark-values: 166 100% 33%;
@@ -33,11 +33,11 @@
 	--success-color-values: 120 60% 55%;
 	--success-color-dark-values: 120 60% 45%;
 
-	--danger-color-values: 12 100% 55%;
-	--danger-color-dark-values: 12 100% 45%;
+	--danger-color-values: 12 75% 55%;
+	--danger-color-dark-values: 12 75% 45%;
 
-	--info-color-values: 157 3% 85%;
-	--info-color-dark-values: 157 3% 75%;
+	--info-color-values: 157 3% 65%;
+	--info-color-dark-values: 157 3% 55%;
 
 	--category-salary-color-values: 147 50% 50%;
 	--category-salary-color-light-values: 147 50% 90%;
@@ -171,4 +171,8 @@ input {
 	font-family: inherit;
 	font-size: 1rem;
 	color: var(--text-color);
+}
+
+a {
+	color: var(--accent-color);
 }

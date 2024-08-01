@@ -45,7 +45,7 @@ const Input = forwardRef(
 							icon
 							className="input__showPw"
 							onClick={() => setShowPassword((show) => !show)}>
-							<FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+							<FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
 						</Button>
 					)}
 				</div>

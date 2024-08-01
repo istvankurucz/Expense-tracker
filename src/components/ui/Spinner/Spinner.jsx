@@ -1,6 +1,6 @@
 import "./Spinner.css";
 
-function Spinner({ size = "1.5rem", variant = "accent", text = "", className }) {
+function Spinner({ size = "1rem", variant = "accent", text = "", className }) {
 	return (
 		<div className={`spinner spinner--${variant}${className ? ` ${className}` : ""}`}>
 			<span style={{ "--size": size }} className="spinner__shape"></span>

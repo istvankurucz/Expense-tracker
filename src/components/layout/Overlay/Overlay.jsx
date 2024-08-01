@@ -10,7 +10,7 @@ function Overlay({ show, className, children }) {
 	}, [show]);
 
 	// Handling tab clicks inside a modal
-	useLayoutEffect(() => {
+	/*useLayoutEffect(() => {
 		if (!show) return;
 
 		// Select focusable elements
@@ -45,7 +45,7 @@ function Overlay({ show, className, children }) {
 		window.addEventListener("keydown", handleTabClick);
 
 		return () => window.removeEventListener("keydown", handleTabClick);
-	}, [show]);
+	}, [show]);*/
 
 	return (
 		<div
