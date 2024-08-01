@@ -20,7 +20,8 @@ function SignUp() {
 	const [loading, setLoading] = useState(false);
 
 	// Refs
-	const nameRef = useRef();
+	const surnameRef = useRef();
+	const firstnameRef = useRef();
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
@@ -125,10 +126,12 @@ function SignUp() {
 		disableSubmitButton(submitButtonRef, setLoading);
 
 		// 2. Get the data from form
-		const name = nameRef.current.value;
+		const surname = surnameRef.current.value;
+		const firstname = firstnameRef.current.value;
 		const email = emailRef.current.value;
 		const password = passwordRef.current.value;
 		const passwordConfirm = passwordConfirmRef.current.value;
+		const name = `${firstname} ${surname}`;
 
 		// console.log({ name, email, password, passwordConfirm });
 
@@ -193,13 +196,22 @@ function SignUp() {
 				<form onSubmit={signUpUser}>
 					<Auth.Modal.Body>
 						<Input
-							label="Név"
+							label="Vezetéknév"
 							type="text"
-							id="signupName"
-							placeholder="Név"
+							id="signupSurname"
+							placeholder="Vezetéknév"
 							required
 							fullW
-							ref={nameRef}
+							ref={surnameRef}
+						/>
+						<Input
+							label="Keresztnév"
+							type="text"
+							id="signupFirstname"
+							placeholder="Keresztnév"
+							required
+							fullW
+							ref={firstnameRef}
 						/>
 						<Input
 							label="Email"

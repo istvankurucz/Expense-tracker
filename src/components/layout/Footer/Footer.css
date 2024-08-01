@@ -1,0 +1,19 @@
+.footer {
+	--color: var(--primary-color);
+	--bg-color: var(--text-color);
+
+	color: var(--color);
+	background-color: var(--bg-color);
+	padding-block: 2rem;
+}
+
+.footer__container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+}
+.footer__copyright__icon {
+	display: inline-block;
+	margin-left: 0.3rem;
+}

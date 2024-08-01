@@ -5,9 +5,9 @@ function Overlay({ show, className, children }) {
 	const overlayRef = useRef();
 
 	// Make the page fixed if a modal is opened
-	useLayoutEffect(() => {
+	/*useLayoutEffect(() => {
 		document.body.classList.toggle("body--fixed", show);
-	}, [show]);
+	}, [show]);*/
 
 	// Handling tab clicks inside a modal
 	/*useLayoutEffect(() => {
