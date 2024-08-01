@@ -68,9 +68,15 @@ function HeaderSidebar({ show, setShow }) {
 									<Link to="/">Adataim</Link>
 								</li>
 								<li>
-									<Link to="/" className="header__menu__a--danger">
-										Kijelentkezés
-									</Link>
+									{user != null ? (
+										<Link to="" className="header__menu__a--danger">
+											Kijelentkezés
+										</Link>
+									) : (
+										<Link to="/signin" className="header__menu__a--accent">
+											Bejelentkezés
+										</Link>
+									)}
 								</li>
 							</ul>
 						)}

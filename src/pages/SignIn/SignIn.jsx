@@ -87,13 +87,6 @@ function SignIn() {
 					<Auth.Title>Bejelentkezés</Auth.Title>
 				</Modal.Header>
 
-				{/* <button
-					onClick={async () => {
-						await signOut(auth);
-					}}>
-					Sign out
-				</button> */}
-
 				<form onSubmit={signInUser}>
 					<Auth.Modal.Body>
 						<Input

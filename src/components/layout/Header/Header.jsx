@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faAngleDown,
-	faBars,
-	faChartColumn,
-	faHouse,
-	faUser,
-	faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faBars, faHouse, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
 import Container from "../Container/Container";
 import "./Header.css";
 import Brand from "../../ui/Brand/Brand";
@@ -15,6 +8,7 @@ import Button from "../../ui/Button/Button";
 import { useStateValue } from "../../../contexts/Context API/StateProvider";
 import HeaderSidebar from "./HeaderSidebar/HeaderSidebar";
 import { useState } from "react";
+import signOutUser from "../../../utils/user/signOutUser";
 
 function Header() {
 	// States
@@ -64,9 +58,18 @@ function Header() {
 									</li>
 									<hr className="header__submenu__divider" />
 									<li>
-										<Link to="/" className="header__menu__a--danger">
-											Kijelentkezés
-										</Link>
+										{user != null ? (
+											<Link
+												to=""
+												className="header__menu__a--danger"
+												onClick={signOutUser}>
+												Kijelentkezés
+											</Link>
+										) : (
+											<Link to="/signin" className="header__menu__a--accent">
+												Bejelentkezés
+											</Link>
+										)}
 									</li>
 								</ul>
 							</li>
