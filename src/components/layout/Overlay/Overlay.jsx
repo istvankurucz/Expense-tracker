@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useLayoutEffect, useRef } from "react";
 import "./Overlay.css";
 
@@ -55,5 +56,11 @@ function Overlay({ show, className, children }) {
 		</div>
 	);
 }
+
+Overlay.propTypes = {
+	show: PropTypes.bool.isRequired,
+	className: PropTypes.string,
+	children: PropTypes.node.isRequired,
+};
 
 export default Overlay;

@@ -87,7 +87,7 @@
 /* #endregion */
 
 .input__showPw {
-	width: 1.2rem;
-	height: 1.2rem;
-	color: var(--accent-color);
+	width: 1.2rem !important;
+	height: 1.2rem !important;
+	color: var(--accent-color) !important;
 }

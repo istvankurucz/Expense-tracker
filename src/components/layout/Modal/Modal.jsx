@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import ModalBody from "./ModalBody";
 import ModalClose from "./ModalClose";
 import ModalFooter from "./ModalFooter";
@@ -7,6 +8,11 @@ import "./Modal.css";
 function Modal({ className, children }) {
 	return <div className={`modal${className ? ` ${className}` : ""}`}>{children}</div>;
 }
+
+Modal.propTypes = {
+	className: PropTypes.string,
+	children: PropTypes.node.isRequired,
+};
 
 Modal.Header = ModalHeader;
 Modal.Body = ModalBody;

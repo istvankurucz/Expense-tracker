@@ -21,9 +21,8 @@
 	gap: 2rem;
 }
 
-.headerSidebar__signin {
-	display: inline-block;
-	margin-inline: auto;
+.headerSidebar__button {
+	text-decoration: none;
 }
 
 .headerSidebar__menu {

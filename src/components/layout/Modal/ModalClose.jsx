@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./ModalClose.css";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import "./ModalClose.css";
 
 function ModalClose({ className, ...rest }) {
 	return (
@@ -9,5 +10,9 @@ function ModalClose({ className, ...rest }) {
 		</button>
 	);
 }
+
+ModalClose.propTypes = {
+	className: PropTypes.string,
+};
 
 export default ModalClose;

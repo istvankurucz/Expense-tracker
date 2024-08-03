@@ -1,0 +1,19 @@
+.newTransactionButton {
+	display: none;
+	position: fixed;
+	bottom: 2rem;
+	right: 1rem;
+}
+
+.newTransactionButton__button {
+	width: 3.5rem;
+	height: 3.5rem;
+	font-size: 1.5rem;
+	box-shadow: 0 0 1rem rgba(0 0 0 / 0.25);
+}
+
+@media screen and (max-width: 768px) {
+	.newTransactionButton {
+		display: inline;
+	}
+}

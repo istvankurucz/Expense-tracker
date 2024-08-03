@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { forwardRef } from "react";
 import "./Button.css";
 
@@ -32,5 +33,26 @@ const Button = forwardRef(
 		);
 	}
 );
+
+Button.displayName = "Button";
+Button.propTypes = {
+	type: PropTypes.string.isRequired,
+	variant: PropTypes.oneOf([
+		"primary",
+		"secondary",
+		"accent",
+		"success",
+		"danger",
+		"info",
+		"transparent",
+	]),
+	outlined: PropTypes.bool,
+	round: PropTypes.bool,
+	fullW: PropTypes.bool,
+	centered: PropTypes.bool,
+	icon: PropTypes.bool,
+	className: PropTypes.string,
+	children: PropTypes.node.isRequired,
+};
 
 export default Button;

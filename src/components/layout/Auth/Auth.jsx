@@ -2,9 +2,9 @@ import AuthModal from "./AuthModal/AuthModal";
 import AuthOverlay from "./AuthOverlay/AuthOverlay";
 import AuthTitle from "./AuthTitle/AuthTitle";
 import AuthModalBody from "./AuthModal/AuthModalBody/AuthModalBody";
-import "./Auth.css";
 import AuthText from "./AuthText/AuthText";
 import AuthLink from "./AuthLink/AuthLink";
+import "./Auth.css";
 
 function Auth() {
 	return <></>;

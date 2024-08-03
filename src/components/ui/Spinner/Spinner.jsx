@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./Spinner.css";
 
 function Spinner({ size = "1rem", variant = "accent", text = "", className }) {
@@ -8,5 +9,12 @@ function Spinner({ size = "1rem", variant = "accent", text = "", className }) {
 		</div>
 	);
 }
+
+Spinner.propTypes = {
+	size: PropTypes.string,
+	variant: PropTypes.oneOf(["primary", "secondary", "info", "accent"]),
+	text: PropTypes.string,
+	className: PropTypes.string,
+};
 
 export default Spinner;

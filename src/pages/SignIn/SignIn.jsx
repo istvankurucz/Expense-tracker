@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../../contexts/Context API/StateProvider";
 import Auth from "../../components/layout/Auth/Auth";
 import Modal from "../../components/layout/Modal/Modal";
 import Input from "../../components/form/Input/Input";
-import "./SignIn.css";
 import Button from "../../components/ui/Button/Button";
-import { useNavigate } from "react-router-dom";
-import { useStateValue } from "../../contexts/Context API/StateProvider";
 import Spinner from "../../components/ui/Spinner/Spinner";
 import disableSubmitButton from "../../utils/general/disableSubmitButton";
 import enableSubmitButton from "../../utils/general/enableSubmitButton";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "../../config/firebase/firebase";
+import "./SignIn.css";
 
 function SignIn() {
 	// States

@@ -1,14 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faBars, faHouse, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { useStateValue } from "../../../contexts/Context API/StateProvider";
 import Container from "../Container/Container";
-import "./Header.css";
 import Brand from "../../ui/Brand/Brand";
 import Button from "../../ui/Button/Button";
-import { useStateValue } from "../../../contexts/Context API/StateProvider";
 import HeaderSidebar from "./HeaderSidebar/HeaderSidebar";
-import { useState } from "react";
 import signOutUser from "../../../utils/user/signOutUser";
+import "./Header.css";
 
 function Header() {
 	// States
@@ -23,11 +23,15 @@ function Header() {
 				<Brand />
 
 				<div className="header__right">
-					{user == null && (
-						<Link to="/signin" className="header__signin">
+					{user == null ? (
+						<Link to="/signin" className="header__button">
 							<Button outlined tabIndex={-1}>
 								Bejelentkezés
 							</Button>
+						</Link>
+					) : (
+						<Link to="/" className="header__button">
+							<Button tabIndex={-1}>Új esemény</Button>
 						</Link>
 					)}
 
@@ -62,7 +66,8 @@ function Header() {
 											<Link
 												to=""
 												className="header__menu__a--danger"
-												onClick={signOutUser}>
+												onClick={signOutUser}
+											>
 												Kijelentkezés
 											</Link>
 										) : (
@@ -81,7 +86,8 @@ function Header() {
 						outlined
 						icon
 						className="header__hamburger"
-						onClick={() => setShowSidebar((show) => !show)}>
+						onClick={() => setShowSidebar((show) => !show)}
+					>
 						<FontAwesomeIcon icon={faBars} />
 					</Button>
 				</div>

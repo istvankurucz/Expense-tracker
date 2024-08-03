@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import { forwardRef, useState } from "react";
-import "./Input.css";
-import Button from "../../ui/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import Button from "../../ui/Button/Button";
+import "./Input.css";
 
 const Input = forwardRef(
 	(
@@ -53,5 +54,17 @@ const Input = forwardRef(
 		);
 	}
 );
+
+Input.displayName = "Input";
+Input.propTypes = {
+	direction: PropTypes.oneOf(["vertical", "horizontal"]),
+	variant: PropTypes.oneOf(["accent", "success", "danger"]),
+	label: PropTypes.string,
+	type: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	fullW: PropTypes.bool,
+	centered: PropTypes.bool,
+	className: PropTypes.string,
+};
 
 export default Input;

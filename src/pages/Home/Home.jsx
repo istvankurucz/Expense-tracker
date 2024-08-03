@@ -7,7 +7,7 @@ function Home() {
 	const [{ user }] = useStateValue();
 
 	// Variables
-	const firstname = user.displayName.split(" ")[0];
+	const firstname = user?.displayName.split(" ")[0];
 
 	return (
 		<div className="home">

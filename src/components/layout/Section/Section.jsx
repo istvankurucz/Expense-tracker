@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Container from "../Container/Container";
 import "./Section.css";
 
@@ -10,5 +11,13 @@ function Section({ id, variant = "primary", py = "2rem", className, children }) 
 		</section>
 	);
 }
+
+Section.propTypes = {
+	id: PropTypes.string.isRequired,
+	variant: PropTypes.oneOf(["primary", "secondary", "accent"]),
+	py: PropTypes.string,
+	className: PropTypes.string,
+	children: PropTypes.node.isRequired,
+};
 
 export default Section;

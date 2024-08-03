@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useCallback, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
@@ -63,5 +64,10 @@ function Feedback({ time = 10, className }) {
 		</div>
 	);
 }
+
+Feedback.propTypes = {
+	time: PropTypes.number.isRequired,
+	className: PropTypes.string,
+};
 
 export default Feedback;

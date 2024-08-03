@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../../../contexts/Context API/StateProvider";
-import Brand from "../../../ui/Brand/Brand";
-import Button from "../../../ui/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faAngleDoubleLeft,
@@ -10,8 +10,10 @@ import {
 	faUser,
 	faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import Brand from "../../../ui/Brand/Brand";
+import Button from "../../../ui/Button/Button";
+import signOutUser from "../../../../utils/user/signOutUser";
 import "./HeaderSidebar.css";
-import { useState } from "react";
 
 function HeaderSidebar({ show, setShow }) {
 	// States
@@ -33,10 +35,16 @@ function HeaderSidebar({ show, setShow }) {
 				</Button>
 			</div>
 
-			{user == null && (
-				<Link to="/signin" className="headerSidebar__signin">
-					<Button outlined tabIndex={-1}>
+			{user == null ? (
+				<Link to="/signin" className="headerSidebar__button">
+					<Button outlined centered tabIndex={-1}>
 						Bejelentkezés
+					</Button>
+				</Link>
+			) : (
+				<Link to="/" className="headerSidebar__button">
+					<Button outlined centered tabIndex={-1}>
+						Új esemény
 					</Button>
 				</Link>
 			)}
@@ -69,7 +77,7 @@ function HeaderSidebar({ show, setShow }) {
 								</li>
 								<li>
 									{user != null ? (
-										<Link to="" className="header__menu__a--danger">
+										<Link to="" className="header__menu__a--danger" onClick={signOutUser}>
 											Kijelentkezés
 										</Link>
 									) : (
@@ -86,5 +94,10 @@ function HeaderSidebar({ show, setShow }) {
 		</div>
 	);
 }
+
+HeaderSidebar.propTypes = {
+	show: PropTypes.bool.isRequired,
+	setShow: PropTypes.func.isRequired,
+};
 
 export default HeaderSidebar;

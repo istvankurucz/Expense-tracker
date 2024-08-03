@@ -6,8 +6,9 @@ import useAuth from "./hooks/auth/useAuth";
 import PasswordReset from "./pages/PasswordReset/PasswordReset";
 import Feedback from "./components/ui/Feedback/Feedback";
 import Header from "./components/layout/Header/Header";
-import "./App.css";
 import Footer from "./components/layout/Footer/Footer";
+import NewTransactionButton from "./components/ui/Button/NewTransactionButton/NewTransactionButton";
+import "./App.css";
 
 function App() {
 	useAuth();
@@ -26,6 +27,8 @@ function App() {
 	return (
 		<div className="app">
 			<Feedback />
+
+			<NewTransactionButton />
 
 			<Routes>
 				<Route path="/signin" element={<SignIn />} />

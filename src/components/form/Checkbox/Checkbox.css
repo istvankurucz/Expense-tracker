@@ -30,7 +30,7 @@
 .checkbox:hover .checkbox__input:checked + .checkbox__marker {
 	background-color: var(--accent-color-dark);
 }
-.checkbox__input:focus + .checkbox__marker {
+.checkbox__input:focus-visible + .checkbox__marker {
 	outline: 0.1rem solid black;
 }
 
