@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useStateValue } from "../../../../contexts/Context API/StateProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faAngleDoubleLeft,
@@ -12,12 +11,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Brand from "../../../ui/Brand/Brand";
 import Button from "../../../ui/Button/Button";
-import signOutUser from "../../../../utils/user/signOutUser";
+import Header from "../Header";
 import "./HeaderSidebar.css";
 
 function HeaderSidebar({ show, setShow }) {
 	// States
-	const [{ user }] = useStateValue();
 	const [showSubmenu, setShowSubmenu] = useState(false);
 
 	return (
@@ -35,19 +33,7 @@ function HeaderSidebar({ show, setShow }) {
 				</Button>
 			</div>
 
-			{user == null ? (
-				<Link to="/signin" className="headerSidebar__button">
-					<Button outlined centered tabIndex={-1}>
-						Bejelentkezés
-					</Button>
-				</Link>
-			) : (
-				<Link to="/" className="headerSidebar__button">
-					<Button outlined centered tabIndex={-1}>
-						Új esemény
-					</Button>
-				</Link>
-			)}
+			<Header.ActionButton />
 
 			<nav className="headerSidebar__nav">
 				<ul className="headerSidebar__menu">
@@ -76,15 +62,7 @@ function HeaderSidebar({ show, setShow }) {
 									<Link to="/">Adataim</Link>
 								</li>
 								<li>
-									{user != null ? (
-										<Link to="" className="header__menu__a--danger" onClick={signOutUser}>
-											Kijelentkezés
-										</Link>
-									) : (
-										<Link to="/signin" className="header__menu__a--accent">
-											Bejelentkezés
-										</Link>
-									)}
+									<Header.AuthButton />
 								</li>
 							</ul>
 						)}

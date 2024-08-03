@@ -42,13 +42,6 @@
 	color: var(--accent-color);
 }
 
-.header__menu__a--danger {
-	color: var(--danger-color) !important;
-}
-.header__menu__a--accent {
-	color: var(--accent-color) !important;
-}
-
 .header__submenu {
 	display: none;
 	font-size: var(--fs-s);
@@ -88,8 +81,7 @@
 }
 
 @media screen and (max-width: 768px) {
-	.header__nav,
-	.header__button {
+	.header__nav {
 		display: none;
 	}
 

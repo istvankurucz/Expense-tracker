@@ -2,17 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faBars, faHouse, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
-import { useStateValue } from "../../../contexts/Context API/StateProvider";
 import Container from "../Container/Container";
 import Brand from "../../ui/Brand/Brand";
 import Button from "../../ui/Button/Button";
 import HeaderSidebar from "./HeaderSidebar/HeaderSidebar";
-import signOutUser from "../../../utils/user/signOutUser";
+import HeaderActionButton from "./HeaderActionButton/HeaderActionButton";
+import HeaderAuthButton from "./HeaderAuthButton/HeaderAuthButton";
 import "./Header.css";
 
 function Header() {
 	// States
-	const [{ user }] = useStateValue();
 	const [showSidebar, setShowSidebar] = useState(false);
 
 	return (
@@ -23,17 +22,7 @@ function Header() {
 				<Brand />
 
 				<div className="header__right">
-					{user == null ? (
-						<Link to="/signin" className="header__button">
-							<Button outlined tabIndex={-1}>
-								Bejelentkezés
-							</Button>
-						</Link>
-					) : (
-						<Link to="/" className="header__button">
-							<Button tabIndex={-1}>Új esemény</Button>
-						</Link>
-					)}
+					<Header.ActionButton />
 
 					<nav className="header__nav">
 						<ul className="header__menu">
@@ -62,19 +51,7 @@ function Header() {
 									</li>
 									<hr className="header__submenu__divider" />
 									<li>
-										{user != null ? (
-											<Link
-												to=""
-												className="header__menu__a--danger"
-												onClick={signOutUser}
-											>
-												Kijelentkezés
-											</Link>
-										) : (
-											<Link to="/signin" className="header__menu__a--accent">
-												Bejelentkezés
-											</Link>
-										)}
+										<Header.AuthButton />
 									</li>
 								</ul>
 							</li>
@@ -86,8 +63,7 @@ function Header() {
 						outlined
 						icon
 						className="header__hamburger"
-						onClick={() => setShowSidebar((show) => !show)}
-					>
+						onClick={() => setShowSidebar((show) => !show)}>
 						<FontAwesomeIcon icon={faBars} />
 					</Button>
 				</div>
@@ -96,6 +72,8 @@ function Header() {
 	);
 }
 
+Header.ActionButton = HeaderActionButton;
+Header.AuthButton = HeaderAuthButton;
 Header.Sidebar = HeaderSidebar;
 
 export default Header;

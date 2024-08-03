@@ -1,0 +1,6 @@
+.headerAuthButton--danger {
+	color: var(--danger-color) !important;
+}
+.headerAuthButton--accent {
+	color: var(--accent-color) !important;
+}
