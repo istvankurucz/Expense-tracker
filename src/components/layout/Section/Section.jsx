@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Container from "../Container/Container";
 import "./Section.css";
+import SectionTitle from "./SectionTitle/SectionTitle";
 
 function Section({ id, variant = "primary", py = "2rem", className, children }) {
 	return (
@@ -19,5 +20,7 @@ Section.propTypes = {
 	className: PropTypes.string,
 	children: PropTypes.node.isRequired,
 };
+
+Section.Title = SectionTitle;
 
 export default Section;

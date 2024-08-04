@@ -1,0 +1,6 @@
+.alertSectionIcon {
+	font-size: 6rem;
+	color: var(--info-color);
+	opacity: 0.5;
+	margin-bottom: 1.5rem;
+}

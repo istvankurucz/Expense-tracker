@@ -1,5 +1,17 @@
+.headerActionButton {
+	text-decoration: none;
+}
+
+.headerActionButton__button {
+	gap: 0.75rem;
+	padding: 0.5rem 1rem;
+}
+
 @media screen and (max-width: 768px) {
-	.headerActionButton {
+	.header .headerActionButton {
 		display: none;
+	}
+	.headerSidebar .headerActionButton {
+		display: inline;
 	}
 }

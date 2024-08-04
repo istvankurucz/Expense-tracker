@@ -11,7 +11,7 @@ function HeaderActionButton() {
 	if (user == null) {
 		return (
 			<Link to="/signin" className="headerActionButton">
-				<Button outlined tabIndex={-1}>
+				<Button centered outlined tabIndex={-1} className="headerActionButton__button">
 					Bejelentkezés
 				</Button>
 			</Link>
@@ -20,9 +20,9 @@ function HeaderActionButton() {
 
 	return (
 		<Link to="/" className="headerActionButton">
-			<Button tabIndex={-1}>
+			<Button centered tabIndex={-1} className="headerActionButton__button">
 				<FontAwesomeIcon icon={faPlus} />
-				Új esemény
+				Új
 			</Button>
 		</Link>
 	);

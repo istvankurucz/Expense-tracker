@@ -1,0 +1,5 @@
+.page {
+	--min-height: 100svh;
+
+	min-height: var(--min-height);
+}

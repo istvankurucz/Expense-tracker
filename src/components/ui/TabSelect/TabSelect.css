@@ -1,0 +1,25 @@
+.tabSelect {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	list-style: none;
+}
+
+.tabSelect__item {
+	padding: 0.25rem 0.5rem;
+	cursor: pointer;
+}
+
+.tabSelect__item--active {
+	position: relative;
+}
+.tabSelect__item--active::after {
+	content: "";
+	height: 0.15rem;
+	background-color: var(--accent-color);
+	border-radius: var(--br-pill);
+	position: absolute;
+	bottom: 0;
+	left: 0.25rem;
+	right: 0.25rem;
+}
