@@ -10,8 +10,8 @@ function Footer() {
 			<Container className="footer__container">
 				<Brand />
 				<p className="footer__p">
-					Minden jog fenntartva.
 					<FontAwesomeIcon icon={faCopyright} className="footer__copyright__icon" />
+					Minden jog fenntartva. 2024
 				</p>
 			</Container>
 		</footer>

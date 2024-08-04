@@ -3,15 +3,15 @@ import Page from "../../components/layout/Page/Page";
 import Section from "../../components/layout/Section/Section";
 import TabSelect from "../../components/ui/TabSelect/TabSelect";
 import { useStateValue } from "../../contexts/Context API/StateProvider";
-import NoTransaction from "../../components/layout/Section/NoTransaction/NoTransaction";
-import "./Home.css";
+import UserLoading from "../../components/ui/UserLoading/UserLoading";
 import NoUser from "../../components/layout/Section/NoUser/NoUser";
+import "./Home.css";
 
 const reportItems = ["Hónap", "Kezdetektől"];
 
 function Home() {
 	// States
-	const [{ user }] = useStateValue();
+	const [{ user, userLoading }] = useStateValue();
 	const [index, setIndex] = useState(0);
 
 	// Variables
@@ -19,15 +19,27 @@ function Home() {
 
 	return (
 		<Page className="home">
-			<Section id="homeWelcome" py="1.5rem">
-				<h2 className="home__title">Szia {firstname}!</h2>
+			<UserLoading />
 
-				<TabSelect items={reportItems} index={index} setIndex={setIndex} />
-			</Section>
+			{!userLoading && user == null ? (
+				<NoUser />
+			) : (
+				<>
+					<Section id="homeWelcome" py="1.5rem">
+						<h2 className="home__title">Szia {firstname}!</h2>
+					</Section>
 
-			<NoTransaction />
+					<Section id="homeReport">
+						<Section.Title>Aktuális egyenleg</Section.Title>
 
-			<NoUser />
+						<TabSelect items={reportItems} index={index} setIndex={setIndex} />
+					</Section>
+
+					<Section id="homeLastTransactions">
+						<Section.Title>Legutóbbi tranzakciók</Section.Title>
+					</Section>
+				</>
+			)}
 		</Page>
 	);
 }

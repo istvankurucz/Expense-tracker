@@ -4,7 +4,7 @@ export default function calcPageMinHeight() {
 	const footer = document.querySelector(".footer");
 
 	// If they are null return the default value
-	if (header == null || footer == null) return "100 svh";
+	if (header == null || footer == null) return "100svh";
 
 	// Get the height of the elements
 	const headerHeight = header.offsetHeight;

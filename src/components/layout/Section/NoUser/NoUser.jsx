@@ -11,7 +11,7 @@ function NoUser() {
 				<p>Úgy tűnik nem vagy bejelentkezve. Kattints az alábbi gombra!</p>
 			</AlertSection.Text>
 
-			<AlertSection.Button link="/">Bejelentkezés</AlertSection.Button>
+			<AlertSection.Button link="/signin">Bejelentkezés</AlertSection.Button>
 		</AlertSection>
 	);
 }

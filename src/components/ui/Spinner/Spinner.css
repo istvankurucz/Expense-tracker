@@ -48,4 +48,8 @@
 .spinner--info {
 	--color: var(--info-color);
 }
+
+.spinner--text {
+	--color: var(--text-color);
+}
 /* #endregion */

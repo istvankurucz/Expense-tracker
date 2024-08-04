@@ -12,7 +12,7 @@ function Spinner({ size = "1rem", variant = "accent", text = "", className }) {
 
 Spinner.propTypes = {
 	size: PropTypes.string,
-	variant: PropTypes.oneOf(["primary", "secondary", "info", "accent"]),
+	variant: PropTypes.oneOf(["primary", "secondary", "info", "accent", "text"]),
 	text: PropTypes.string,
 	className: PropTypes.string,
 };

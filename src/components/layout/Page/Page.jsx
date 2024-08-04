@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
+import usePageMinHeight from "../../../hooks/dom/usePageMinHeight";
 import "./Page.css";
-import calcPageMinHeight from "../../../utils/general/calcPageMinHeight";
 
 function Page({ className, children }) {
-	const minHeightString = calcPageMinHeight();
+	const minHeightString = usePageMinHeight();
 
 	return (
 		<main
