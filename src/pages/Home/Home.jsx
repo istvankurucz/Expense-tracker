@@ -6,6 +6,7 @@ import { useStateValue } from "../../contexts/Context API/StateProvider";
 import UserLoading from "../../components/ui/UserLoading/UserLoading";
 import NoUser from "../../components/layout/Section/NoUser/NoUser";
 import "./Home.css";
+import Chart from "../../components/ui/Chart/Chart";
 
 const reportItems = ["Hónap", "Kezdetektől"];
 
@@ -33,6 +34,79 @@ function Home() {
 						<Section.Title>Aktuális egyenleg</Section.Title>
 
 						<TabSelect items={reportItems} index={index} setIndex={setIndex} />
+
+						<Chart>
+							<Chart.Bar
+								width="3.33rem"
+								variant="success"
+								height={50}
+								name="Bevétel"
+								value="50 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="danger"
+								height={100}
+								name="Kiadás"
+								value="100 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="success"
+								height={50}
+								name="Bevétel"
+								value="50 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="danger"
+								height={100}
+								name="Kiadás"
+								value="100 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="success"
+								height={50}
+								name="Bevétel"
+								value="50 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="danger"
+								height={100}
+								name="Kiadás"
+								value="100 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="success"
+								height={50}
+								name="Bevétel"
+								value="50 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="danger"
+								height={100}
+								name="Kiadás"
+								value="100 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="success"
+								height={50}
+								name="Bevétel"
+								value="50 Ft"
+							/>
+							<Chart.Bar
+								width="3.33rem"
+								variant="danger"
+								height={100}
+								name="Kiadás"
+								value="100 Ft"
+							/>
+						</Chart>
 					</Section>
 
 					<Section id="homeLastTransactions">

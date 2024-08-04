@@ -1,0 +1,61 @@
+.chartBar {
+	padding-top: 1.5rem;
+	cursor: pointer;
+}
+/* #region Variants */
+.chartBar--success {
+	--color: var(--success-color);
+}
+
+.chartBar--danger {
+	--color: var(--danger-color);
+}
+/* #endregion */
+
+.chartBar__bar {
+	--bar-width: 5rem;
+	--bar-height: 0;
+
+	width: var(--bar-width);
+	height: 10rem;
+	border-radius: var(--br);
+	position: relative;
+}
+.chartBar__bar::before {
+	content: attr(data-value);
+	font-size: var(--fs-s);
+	font-weight: 500;
+	text-align: center;
+	text-wrap: nowrap;
+	color: var(--color);
+	position: absolute;
+	bottom: calc(var(--bar-height) + 0.5rem);
+	left: 0;
+	right: 0;
+}
+.chartBar__bar::after {
+	content: "";
+	background-color: var(--color);
+	border-radius: var(--br);
+	position: absolute;
+	inset: 0;
+	top: 100%;
+	transition: scale 200ms ease;
+	animation: grow 500ms ease 1 forwards;
+}
+.chartBar:hover .chartBar__bar::after {
+	scale: 1.05;
+}
+
+@keyframes grow {
+	to {
+		top: calc(100% - var(--bar-height));
+	}
+}
+
+.chartBar__name {
+	font-size: var(--fs-s);
+	font-weight: 500;
+	text-align: center;
+	padding-top: 0.5rem;
+}

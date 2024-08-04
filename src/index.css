@@ -177,6 +177,17 @@ a {
 	color: var(--accent-color);
 }
 
+.scrollbar::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: var(--secondary-color);
+	border-radius: var(--br-pill);
+}
+.scrollbar::-webkit-scrollbar-thumb {
+	background-color: var(--info-color);
+	border-radius: var(--br-pill);
+}
+
 @media screen and (max-width: 576px) {
 	html {
 		font-size: 14px;
