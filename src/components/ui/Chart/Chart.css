@@ -1,8 +1,24 @@
 .chart {
+	--justify: center;
+
+	width: 100%;
 	display: flex;
-	gap: 2rem;
-	max-width: 100%;
+	justify-content: var(--justify);
 	overflow-x: auto;
 	overflow-y: visible;
 	padding-bottom: 0.5rem;
 }
+
+/* #region Types */
+.chart__container--bar {
+	display: flex;
+	gap: 2rem;
+}
+
+.chart__container--pie {
+	width: var(--size, 16rem);
+	height: var(--size, 16rem);
+	margin-block: calc(var(--offset, 0) * 2);
+	position: relative;
+}
+/* #endregion */

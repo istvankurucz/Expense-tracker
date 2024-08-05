@@ -1,0 +1,79 @@
+.chartPie {
+	--from-degree: 45deg;
+	--degree: 90deg;
+
+	width: var(--size);
+	height: var(--size);
+	background-image: conic-gradient(
+		transparent 0deg,
+		transparent var(--from-degree),
+		var(--color) var(--from-degree),
+		var(--color) calc(var(--from-degree) + var(--degree)),
+		transparent calc(var(--from-degree) + var(--degree))
+	);
+	border-radius: var(--br-pill);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* #region Variants */
+.chartPie--category-salary {
+	--color: var(--category-salary-color);
+}
+
+.chartPie--category-interest {
+	--color: var(--category-interest-color);
+}
+
+.chartPie--category-food {
+	--color: var(--category-food-color);
+}
+
+.chartPie--category-entertainment {
+	--color: var(--category-entertainment-color);
+}
+
+.chartPie--category-health {
+	--color: var(--category-health-color);
+}
+
+.chartPie--category-housing {
+	--color: var(--category-housing-color);
+}
+
+.chartPie--category-utilities {
+	--color: var(--category-utilities-color);
+}
+
+.chartPie--category-transportation {
+	--color: var(--category-transportation-color);
+}
+
+.chartPie--category-clothing {
+	--color: var(--category-clothing-color);
+}
+
+.chartPie--category-education {
+	--color: var(--category-education-color);
+}
+
+.chartPie--category-other {
+	--color: var(--category-other-color);
+}
+/* #endregion */
+
+.chartPie__info {
+	--x: calc((var(--size) / 2 + var(--offset)) * sin(var(--from-degree) + var(--degree) / 2));
+	--y: calc(-1 * (var(--size) / 2 + var(--offset)) * cos(var(--from-degree) + var(--degree) / 2));
+
+	text-align: center;
+	background-color: var(--primary-color);
+	border: 0.1rem solid var(--color);
+	border-radius: var(--br);
+	padding: 0.25rem 0.5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: calc(-50% + var(--x)) calc(-50% + var(--y));
+}
