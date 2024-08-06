@@ -3,7 +3,7 @@
 	gap: 1rem;
 	justify-content: center;
 	align-items: center;
-	color: var(--text-color);
+	color: var(--_text-color);
 	background-color: var(--bg-color);
 	border: 0.1rem solid var(--bg-color);
 	border-radius: var(--br);
@@ -18,43 +18,43 @@
 
 /* #region Variants */
 .button--primary {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: var(--primary-color);
 	--hover-color: var(--primary-color-dark);
 }
 
 .button--secondary {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: var(--secondary-color);
 	--hover-color: var(--secondary-color-dark);
 }
 
 .button--accent {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--accent-color);
 	--hover-color: var(--accent-color-dark);
 }
 
 .button--success {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--success-color);
 	--hover-color: var(--success-color-dark);
 }
 
 .button--danger {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--danger-color);
 	--hover-color: var(--danger-color-dark);
 }
 
 .button--info {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: var(--info-color);
 	--hover-color: var(--info-color-dark);
 }
 
 .button--transparent {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: transparent;
 	--hover-color: transparent;
 }
@@ -68,7 +68,7 @@
 	transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 .button--outlined:hover {
-	color: var(--text-color);
+	color: var(--_text-color);
 	background-color: var(--hover-color);
 	border-color: var(--hover-color);
 }
@@ -102,7 +102,7 @@
 	cursor: no-drop;
 }
 .button:disabled:hover {
-	color: var(--text-color);
+	color: var(--_text-color);
 	background-color: var(--bg-color);
 	border-color: var(--bg-color);
 }

@@ -2,7 +2,7 @@
 	--px: 1rem;
 
 	width: clamp(200px, 95%, 400px);
-	color: var(--text-color);
+	color: var(--_text-color);
 	background-color: var(--bg-color);
 	border-radius: var(--br);
 	box-shadow: 0.5rem 0.5rem 2rem rgba(0 0 0 /0.1);
@@ -19,17 +19,17 @@
 
 /* #region Variants */
 .feedback--info {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--info-color);
 }
 
 .feedback--success {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--success-color);
 }
 
 .feedback--error {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--danger-color);
 }
 /* #endregion */

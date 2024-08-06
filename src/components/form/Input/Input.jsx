@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../ui/Button/Button";
 import "./Input.css";
+import RequiredIcon from "../RequiredIcon/RequiredIcon";
 
 const Input = forwardRef(
 	(
@@ -29,7 +30,7 @@ const Input = forwardRef(
 				}${className ? ` ${className}` : ""}`}>
 				<label htmlFor={id} className="input__label">
 					{label}
-					{rest.required && <span className="input__required">*</span>}
+					{rest.required && <RequiredIcon />}
 				</label>
 
 				<div className="input__main">
@@ -60,7 +61,7 @@ Input.propTypes = {
 	direction: PropTypes.oneOf(["vertical", "horizontal"]),
 	variant: PropTypes.oneOf(["accent", "success", "danger"]),
 	label: PropTypes.string,
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	fullW: PropTypes.bool,
 	centered: PropTypes.bool,

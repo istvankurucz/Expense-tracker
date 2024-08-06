@@ -10,9 +10,9 @@ import Modal from "../../components/layout/Modal/Modal";
 import Button from "../../components/ui/Button/Button";
 import Spinner from "../../components/ui/Spinner/Spinner";
 import Checkbox from "../../components/form/Checkbox/Checkbox";
+import disableSubmitButton from "../../utils/form/disableSubmitButton";
+import enableSubmitButton from "../../utils/form/enableSubmitButton";
 import "./SignUp.css";
-import disableSubmitButton from "../../utils/general/disableSubmitButton";
-import enableSubmitButton from "../../utils/general/enableSubmitButton";
 
 function SignUp() {
 	// States

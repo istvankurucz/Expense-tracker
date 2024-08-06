@@ -8,9 +8,9 @@ import Auth from "../../components/layout/Auth/Auth";
 import Modal from "../../components/layout/Modal/Modal";
 import Button from "../../components/ui/Button/Button";
 import Spinner from "../../components/ui/Spinner/Spinner";
+import disableSubmitButton from "../../utils/form/disableSubmitButton";
+import enableSubmitButton from "../../utils/form/enableSubmitButton";
 import "./PasswordReset.css";
-import disableSubmitButton from "../../utils/general/disableSubmitButton";
-import enableSubmitButton from "../../utils/general/enableSubmitButton";
 
 function PasswordReset() {
 	// States

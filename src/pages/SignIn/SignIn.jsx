@@ -8,8 +8,8 @@ import Modal from "../../components/layout/Modal/Modal";
 import Input from "../../components/form/Input/Input";
 import Button from "../../components/ui/Button/Button";
 import Spinner from "../../components/ui/Spinner/Spinner";
-import disableSubmitButton from "../../utils/general/disableSubmitButton";
-import enableSubmitButton from "../../utils/general/enableSubmitButton";
+import disableSubmitButton from "../../utils/form/disableSubmitButton";
+import enableSubmitButton from "../../utils/form/enableSubmitButton";
 import "./SignIn.css";
 
 function SignIn() {

@@ -1,0 +1,41 @@
+.transaction {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+/* #region Types */
+.transaction--income {
+	--amount-color: var(--success-color);
+}
+
+.transaction--expense {
+	--amount-color: var(--danger-color);
+}
+/* #endregion */
+
+.transaction__date {
+	font-size: var(--fs-s);
+}
+
+.transaction__body {
+	flex: 1;
+}
+
+.transaction__body__top {
+	font-size: var(--fs-s);
+	color: var(--info-color);
+	margin-bottom: 0.5rem;
+}
+
+.transaction__group {
+	text-decoration: none;
+	color: inherit;
+}
+.transaction__group:hover {
+	text-decoration: underline;
+}
+
+.transaction__amount {
+	font-weight: 500;
+	color: var(--amount-color);
+}

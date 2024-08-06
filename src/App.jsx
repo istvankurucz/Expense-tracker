@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
@@ -9,9 +9,12 @@ import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import NewTransactionButton from "./components/ui/Button/NewTransactionButton/NewTransactionButton";
 import "./App.css";
+import NewTransaction from "./pages/NewTransaction/NewTransaction";
 
 function App() {
+	// Hooks
 	useAuth();
+	const location = useLocation();
 
 	// Functions
 	function renderWithHeaderAndFooter(component) {
@@ -28,9 +31,14 @@ function App() {
 		<div className="app">
 			<Feedback />
 
-			<NewTransactionButton />
+			{location?.pathname !== "/new-transaction" && <NewTransactionButton />}
 
 			<Routes>
+				<Route
+					path="/new-transaction"
+					element={renderWithHeaderAndFooter(<NewTransaction />)}
+				/>
+
 				<Route path="/signin" element={<SignIn />} />
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="/password-reset" element={<PasswordReset />} />

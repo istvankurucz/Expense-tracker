@@ -1,0 +1,16 @@
+.categorySelectOption {
+	--_text-color: var(--text-color);
+	--bg-color: var(--primary-group);
+
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	color: var(--_text-color);
+	background-color: var(--bg-color);
+	padding: 0.25rem 1rem;
+}
+
+.categorySelectOption__text {
+	font-weight: 500;
+	text-transform: capitalize;
+}

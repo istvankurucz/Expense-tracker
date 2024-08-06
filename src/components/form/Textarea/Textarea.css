@@ -1,0 +1,46 @@
+.textarea {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+/* #region Variants */
+.textarea--accent {
+	--color: var(--accent-color);
+	--shadow: 0 0 0 0.2rem hsl(var(--accent-color-values) / 0.25);
+}
+
+.textarea--success {
+	--color: var(--success-color);
+	--shadow: 0 0 0 0.2rem hsl(var(--success-color-values) / 0.25);
+}
+
+.textarea--danger {
+	--color: var(--danger-color);
+	--shadow: 0 0 0 0.2rem hsl(var(--danger-color-values) / 0.25);
+}
+/* #endregion */
+
+/* #region Types */
+.textarea--full {
+	width: 100%;
+}
+/* #endregion */
+
+.textarea__label {
+	font-size: var(--fs-s);
+}
+
+.textarea__input {
+	background-color: transparent;
+	border: 0.1rem solid var(--info-color);
+	border-radius: var(--br);
+	padding: 0.5rem 1rem;
+	outline: none;
+}
+.textarea__input:not(:placeholder-shown) {
+	border-color: var(--color);
+}
+.textarea__input:focus-visible {
+	border-color: var(--color);
+	box-shadow: var(--shadow);
+}

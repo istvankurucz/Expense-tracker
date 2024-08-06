@@ -5,13 +5,17 @@ import AlertSectionText from "./AlertSectionText/AlertSectionText";
 import AlertSectionButton from "./AlertSectionButton/AlertSectionButton";
 import "./AlertSection.css";
 
-function AlertSection({ className, children }) {
+function AlertSection({ id, className, children }) {
 	return (
-		<Section className={`alertSection${className ? ` ${className}` : ""}`}>{children}</Section>
+		<Section id={id} className={`alertSection${className ? ` ${className}` : ""}`}>
+			{children}
+		</Section>
 	);
 }
 
 AlertSection.propTypes = {
+	id: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	className: PropTypes.string,
 	children: PropTypes.node.isRequired,
 };

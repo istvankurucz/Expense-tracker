@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
+import RequiredIcon from "../RequiredIcon/RequiredIcon";
 import "./Checkbox.css";
 
 const Checkbox = forwardRef(({ variant = "accent", label, id, className, ...rest }, ref) => {
@@ -11,7 +12,7 @@ const Checkbox = forwardRef(({ variant = "accent", label, id, className, ...rest
 			<span className="checkbox__marker"></span>
 			<span className="checkbox__label">
 				{label}
-				{rest.required && <span className="checkbox__required">*</span>}
+				{rest.required && <RequiredIcon />}
 			</span>
 		</label>
 	);

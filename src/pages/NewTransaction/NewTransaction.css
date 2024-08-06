@@ -1,0 +1,21 @@
+#newTransactionWelcome > * {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+}
+
+.newTransaction__type__select {
+	margin-left: auto;
+}
+
+.newTransaction__inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+#newTransactionSubmit > * {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: flex-end;
+}

@@ -7,7 +7,9 @@ import "./NewTransactionButton.css";
 
 function NewTransactionButton({ className }) {
 	return (
-		<Link className={`newTransactionButton${className ? ` ${className}` : ""}`}>
+		<Link
+			to="/new-transaction"
+			className={`newTransactionButton${className ? ` ${className}` : ""}`}>
 			<Button icon round className="newTransactionButton__button">
 				<FontAwesomeIcon icon={faPlus} />
 			</Button>

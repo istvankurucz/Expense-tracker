@@ -1,0 +1,25 @@
+.switchSelect {
+	display: flex;
+	justify-content: center;
+}
+
+.switchSelect__container {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	background-color: hsl(var(--accent-color-values) / 0.2);
+	border-radius: var(--br-pill);
+}
+
+.switchSelect__item {
+	background: none;
+	border: none;
+	border-radius: var(--br-pill);
+	padding: 0.65rem 1.5rem;
+	cursor: pointer;
+}
+.switchSelect__item--active {
+	color: var(--primary-color);
+	background-color: var(--accent-color);
+}

@@ -19,7 +19,7 @@ function HeaderActionButton() {
 	}
 
 	return (
-		<Link to="/" className="headerActionButton">
+		<Link to="/new-transaction" className="headerActionButton">
 			<Button centered tabIndex={-1} className="headerActionButton__button">
 				<FontAwesomeIcon icon={faPlus} />
 				Új

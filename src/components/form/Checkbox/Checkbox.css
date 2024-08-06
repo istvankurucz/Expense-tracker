@@ -54,9 +54,3 @@
 .checkbox__label {
 	font-size: var(--fs-s);
 }
-
-.checkbox__required {
-	display: inline-block;
-	color: var(--danger-color);
-	margin-left: 0.25rem;
-}

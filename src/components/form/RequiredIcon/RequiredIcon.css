@@ -1,0 +1,5 @@
+.requiredIcon {
+	display: inline-block;
+	color: var(--danger-color);
+	margin-left: 0.25rem;
+}

@@ -1,7 +1,7 @@
 .section {
 	--py: 2rem;
 
-	color: var(--text-color);
+	color: var(--_text-color);
 	background-color: var(--bg-color);
 	padding-inline: 1rem;
 	padding-block: var(--py);
@@ -9,17 +9,17 @@
 
 /* #region Variants */
 .section--primary {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: var(--primary-color);
 }
 
 .section--secondary {
-	--text-color: var(--text-color);
+	--_text-color: var(--text-color);
 	--bg-color: var(--secondary-color);
 }
 
 .section--accent {
-	--text-color: var(--primary-color);
+	--_text-color: var(--primary-color);
 	--bg-color: var(--accent-color);
 }
 /* #endregion */

@@ -21,8 +21,8 @@
 	--primary-color-values: 155 100% 100%;
 	--primary-color-dark-values: 155 100% 90%;
 
-	--secondary-color-values: 218 12% 90%;
-	--secondary-color-dark-values: 218 12% 80%;
+	--secondary-color-values: 218 12% 95%;
+	--secondary-color-dark-values: 218 12% 85%;
 
 	--accent-color-values: 166 100% 43%;
 	--accent-color-dark-values: 166 100% 33%;
@@ -36,8 +36,8 @@
 	--danger-color-values: 12 75% 55%;
 	--danger-color-dark-values: 12 75% 45%;
 
-	--info-color-values: 157 3% 65%;
-	--info-color-dark-values: 157 3% 55%;
+	--info-color-values: 157 3% 75%;
+	--info-color-dark-values: 157 3% 65%;
 
 	--category-salary-color-values: 147 50% 50%;
 	--category-salary-color-light-values: 147 50% 90%;
@@ -167,7 +167,8 @@ button {
 	color: var(--text-color);
 }
 
-input {
+input,
+textarea {
 	font-family: inherit;
 	font-size: 1rem;
 	color: var(--text-color);

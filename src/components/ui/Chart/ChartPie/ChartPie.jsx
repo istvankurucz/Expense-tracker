@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./ChartPie.css";
 
-function ChartPie({ color, fromDegree, degree, showCaption = true, name, value }) {
+function ChartPie({ color, fromDegree, degree, showCaption = true, name = "", value }) {
 	return (
 		<div
 			style={{
@@ -12,7 +12,7 @@ function ChartPie({ color, fromDegree, degree, showCaption = true, name, value }
 			className={`chartPie chartPie--${color}`}>
 			{showCaption && (
 				<div className="chartPie__info">
-					<div className="chartPie__name">{name}</div>
+					{name !== "" && <div className="chartPie__name">{name}</div>}
 					<div className="chartPie__name">{value}</div>
 				</div>
 			)}
@@ -25,7 +25,7 @@ ChartPie.propTypes = {
 	fromDegree: PropTypes.number.isRequired,
 	degree: PropTypes.number.isRequired,
 	showCaption: PropTypes.bool,
-	name: PropTypes.string.isRequired,
+	name: PropTypes.string,
 	value: PropTypes.string.isRequired,
 };
 
