@@ -36,7 +36,7 @@ const Button = forwardRef(
 
 Button.displayName = "Button";
 Button.propTypes = {
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	variant: PropTypes.oneOf([
 		"primary",
 		"secondary",

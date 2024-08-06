@@ -66,7 +66,7 @@ function Feedback({ time = 10, className }) {
 }
 
 Feedback.propTypes = {
-	time: PropTypes.number.isRequired,
+	time: PropTypes.number,
 	className: PropTypes.string,
 };
 

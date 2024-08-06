@@ -2,19 +2,11 @@
 	padding-top: 1.5rem;
 	cursor: pointer;
 }
-/* #region Variants */
-.chartBar--success {
-	--color: var(--success-color);
-}
-
-.chartBar--danger {
-	--color: var(--danger-color);
-}
-/* #endregion */
 
 .chartBar__bar {
 	--bar-width: 5rem;
 	--bar-height: 0;
+	--color: white;
 
 	width: var(--bar-width);
 	height: 10rem;

@@ -9,6 +9,20 @@ import "./Home.css";
 import Chart from "../../components/ui/Chart/Chart";
 
 const reportItems = ["Hónap", "Kezdetektől"];
+const pieLegend = [
+	{
+		color: "red",
+		text: "red",
+	},
+	{
+		color: "blue",
+		text: "blue",
+	},
+	{
+		color: "green",
+		text: "green",
+	},
+];
 
 function Home() {
 	// States
@@ -39,70 +53,70 @@ function Home() {
 						<Chart type="bar" justify="flex-start">
 							<Chart.Bar
 								width="3.33rem"
-								variant="success"
+								color="var(--success-color)"
 								height={50}
 								name="Bevétel"
 								value="50 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="danger"
+								color="var(--danger-color)"
 								height={100}
 								name="Kiadás"
 								value="100 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="success"
+								color="var(--success-color)"
 								height={50}
 								name="Bevétel"
 								value="50 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="danger"
+								color="var(--danger-color)"
 								height={100}
 								name="Kiadás"
 								value="100 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="success"
+								color="var(--success-color)"
 								height={50}
 								name="Bevétel"
 								value="50 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="danger"
+								color="var(--danger-color)"
 								height={100}
 								name="Kiadás"
 								value="100 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="success"
+								color="var(--success-color)"
 								height={50}
 								name="Bevétel"
 								value="50 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="danger"
+								color="var(--danger-color)"
 								height={100}
 								name="Kiadás"
 								value="100 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="success"
+								color="var(--success-color)"
 								height={50}
 								name="Bevétel"
 								value="50 Ft"
 							/>
 							<Chart.Bar
 								width="3.33rem"
-								variant="danger"
+								color="var(--danger-color)"
 								height={100}
 								name="Kiadás"
 								value="100 Ft"
@@ -116,9 +130,10 @@ function Home() {
 							type="pie"
 							justify="center"
 							size="16rem"
-							offset={showCaption ? "3rem" : "0"}>
+							offset={showCaption ? "3rem" : "0"}
+							legend={pieLegend}>
 							<Chart.Pie
-								variant="category-salary"
+								color="var(--category-salary-color)"
 								fromDegree={0}
 								degree={360 / 11}
 								name="Fizetés"
@@ -126,7 +141,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-interest"
+								color="var(--category-interest-color)"
 								fromDegree={360 / 11}
 								degree={360 / 11}
 								name="Kamat"
@@ -134,7 +149,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-food"
+								color="var(--category-food-color)"
 								fromDegree={(2 * 360) / 11}
 								degree={360 / 11}
 								name="Élelmiszer"
@@ -142,7 +157,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-entertainment"
+								color="var(--category-entertainment-color)"
 								fromDegree={(3 * 360) / 11}
 								degree={360 / 11}
 								name="Szórakozás"
@@ -150,7 +165,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-health"
+								color="var(--category-health-color)"
 								fromDegree={(4 * 360) / 11}
 								degree={360 / 11}
 								name="Egészség"
@@ -158,7 +173,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-housing"
+								color="var(--category-housing-color)"
 								fromDegree={(5 * 360) / 11}
 								degree={360 / 11}
 								name="Háztarttás"
@@ -166,7 +181,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-utilities"
+								color="var(--category-utilities-color)"
 								fromDegree={(6 * 360) / 11}
 								degree={360 / 11}
 								name="Számlák"
@@ -174,7 +189,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-transportation"
+								color="var(--category-transportation-color)"
 								fromDegree={(7 * 360) / 11}
 								degree={360 / 11}
 								name="Közlekedés"
@@ -182,7 +197,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-clothing"
+								color="var(--category-clothing-color)"
 								fromDegree={(8 * 360) / 11}
 								degree={360 / 11}
 								name="Ruházat"
@@ -190,7 +205,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-education"
+								color="var(--category-education-color)"
 								fromDegree={(9 * 360) / 11}
 								degree={360 / 11}
 								name="Tanulmányok"
@@ -198,7 +213,7 @@ function Home() {
 								showCaption={showCaption}
 							/>
 							<Chart.Pie
-								variant="category-other"
+								color="var(--category-other-color)"
 								fromDegree={(10 * 360) / 11}
 								degree={360 / 11}
 								name="Egyéb"

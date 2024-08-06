@@ -3,12 +3,12 @@
 
 	width: 100%;
 	display: flex;
+	gap: 5rem;
 	justify-content: var(--justify);
 	overflow-x: auto;
 	overflow-y: visible;
 	padding-bottom: 0.5rem;
 }
-
 /* #region Types */
 .chart__container--bar {
 	display: flex;
@@ -22,3 +22,27 @@
 	position: relative;
 }
 /* #endregion */
+
+.chart__legend {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: center;
+	list-style: none;
+}
+
+.chart__legend__item {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.chart__legend__color {
+	--color: white;
+
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+	background-color: var(--color);
+	border-radius: var(--br-pill);
+}

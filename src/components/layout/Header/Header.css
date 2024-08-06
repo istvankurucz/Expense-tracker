@@ -39,7 +39,7 @@
 	padding: 0.25rem 1rem;
 	transition: color 200ms ease;
 }
-.header__menu > li > a:hover {
+.header__menu > li:hover > a {
 	color: var(--accent-color);
 }
 

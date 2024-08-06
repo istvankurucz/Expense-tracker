@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
 import "./ChartPie.css";
 
-function ChartPie({ variant, fromDegree, degree, showCaption = true, name, value }) {
+function ChartPie({ color, fromDegree, degree, showCaption = true, name, value }) {
 	return (
 		<div
-			style={{ "--from-degree": `${fromDegree}deg`, "--degree": `${degree}deg` }}
-			className={`chartPie chartPie--${variant}`}>
+			style={{
+				"--from-degree": `${fromDegree}deg`,
+				"--degree": `${degree}deg`,
+				"--color": color,
+			}}
+			className={`chartPie chartPie--${color}`}>
 			{showCaption && (
 				<div className="chartPie__info">
 					<div className="chartPie__name">{name}</div>
@@ -17,19 +21,7 @@ function ChartPie({ variant, fromDegree, degree, showCaption = true, name, value
 }
 
 ChartPie.propTypes = {
-	variant: PropTypes.oneOf([
-		"category-salary",
-		"category-interest",
-		"category-food",
-		"category-entertainment",
-		"category-health",
-		"category-housing",
-		"category-utilities",
-		"category-transportation",
-		"category-clothing",
-		"category-education",
-		"category-other",
-	]),
+	color: PropTypes.string.isRequired,
 	fromDegree: PropTypes.number.isRequired,
 	degree: PropTypes.number.isRequired,
 	showCaption: PropTypes.bool,
