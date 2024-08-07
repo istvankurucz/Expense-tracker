@@ -4,7 +4,7 @@ import "./NoUser.css";
 
 function NoUser() {
 	return (
-		<AlertSection>
+		<AlertSection id="noUser">
 			<AlertSection.Icon icon={faUserSlash} />
 
 			<AlertSection.Text>

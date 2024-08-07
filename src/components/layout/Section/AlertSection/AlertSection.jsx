@@ -7,7 +7,7 @@ import "./AlertSection.css";
 
 function AlertSection({ id, className, children }) {
 	return (
-		<Section id={id} className={`alertSection${className ? ` ${className}` : ""}`}>
+		<Section id={id} py="5rem" className={`alertSection${className ? ` ${className}` : ""}`}>
 			{children}
 		</Section>
 	);

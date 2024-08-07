@@ -7,7 +7,7 @@ function AlertSectionIcon({ icon }) {
 }
 
 AlertSectionIcon.propTypes = {
-	icon: PropTypes.node.isRequired,
+	icon: PropTypes.object.isRequired,
 };
 
 export default AlertSectionIcon;

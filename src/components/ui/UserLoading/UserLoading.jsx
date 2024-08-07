@@ -8,7 +8,7 @@ function UserLoading() {
 
 	return (
 		<Overlay show={userLoading} className="userLoading">
-			<Spinner variant="text" size="5rem" text="Adataid betöltése.." />
+			<Spinner variant="text" size="5rem" text="Adatok betöltése.." />
 		</Overlay>
 	);
 }

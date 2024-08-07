@@ -9,7 +9,8 @@ const Textarea = forwardRef(
 			<div
 				className={`textarea textarea--${variant}${fullW ? " textarea--full" : ""}${
 					className !== "" ? ` ${className}` : ""
-				}`}>
+				}`}
+			>
 				<label htmlFor={id} className="textarea__label">
 					{label}
 					{rest.required && <RequiredIcon />}
@@ -22,7 +23,7 @@ const Textarea = forwardRef(
 
 Textarea.displayName = "Textarea";
 Textarea.propTypes = {
-	label: PropTypes.oneOf(["accent", "success", "danger"]),
+	variant: PropTypes.oneOf(["accent", "success", "danger"]),
 	label: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
 	fullW: PropTypes.bool,
