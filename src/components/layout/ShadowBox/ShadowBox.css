@@ -1,0 +1,7 @@
+.shadowBox {
+	--size: 0.5rem;
+	--color: var(--info-color);
+
+	border-radius: var(--br);
+	box-shadow: 0 0 var(--size) var(--color);
+}

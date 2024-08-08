@@ -9,7 +9,12 @@ import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import NewTransactionButton from "./components/ui/Button/NewTransactionButton/NewTransactionButton";
 import NewTransaction from "./pages/NewTransaction/NewTransaction";
+import NewGroup from "./pages/NewGroup/NewGroup";
+import Group from "./pages/Group/Group";
+import Groups from "./pages/Groups/Groups";
 import "./App.css";
+import JoinGroup from "./pages/JoinGroup/JoinGroup";
+import GroupProvider from "./contexts/group/GroupContext";
 
 function App() {
 	// Hooks
@@ -37,6 +42,14 @@ function App() {
 				<Route
 					path="/new-transaction"
 					element={renderWithHeaderAndFooter(<NewTransaction />)}
+				/>
+
+				<Route path="/groups" element={renderWithHeaderAndFooter(<Groups />)} />
+				<Route path="/new-group" element={renderWithHeaderAndFooter(<NewGroup />)} />
+				<Route path="/join-group" element={renderWithHeaderAndFooter(<JoinGroup />)} />
+				<Route
+					path="/groups/:groupId"
+					element={<GroupProvider>{renderWithHeaderAndFooter(<Group />)}</GroupProvider>}
 				/>
 
 				<Route path="/signin" element={<SignIn />} />

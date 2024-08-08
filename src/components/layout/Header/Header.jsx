@@ -41,7 +41,7 @@ function Header() {
 								</Link>
 							</li>
 							<li className="header__menu__item--submenu">
-								<Link to="/" title="Csoportok">
+								<Link to="/groups" title="Csoportok">
 									<FontAwesomeIcon icon={faUsers} />
 									Csoportok
 									<FontAwesomeIcon icon={faAngleDown} />

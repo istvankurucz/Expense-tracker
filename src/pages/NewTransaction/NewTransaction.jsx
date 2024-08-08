@@ -15,8 +15,9 @@ import Select from "../../components/form/Select/Select";
 import Spinner from "../../components/ui/Spinner/Spinner";
 import disableSubmitButton from "../../utils/form/disableSubmitButton";
 import enableSubmitButton from "../../utils/form/enableSubmitButton";
-import UserLoadingFrame from "../../components/layout/UserLoadingFrame/UserLoadingFrame";
+import UserLoadingFrame from "../../components/layout/LoadingFrame/UserLoadingFrame/UserLoadingFrame";
 import "./NewTransaction.css";
+import FormButtons from "../../components/layout/FormButtons/FormButtons";
 
 const typeSelectItems = [
 	{
@@ -192,14 +193,16 @@ function NewTransaction() {
 					</Section>
 
 					<Section maxWidth={maxWidth} id="newTransactionSubmit">
-						<Link to="/">
-							<Button variant="info" outlined tabIndex={-1}>
-								Mégse
+						<FormButtons>
+							<Link to="/">
+								<Button variant="info" outlined tabIndex={-1}>
+									Mégse
+								</Button>
+							</Link>
+							<Button type="submit" variant="accent" ref={submitButtonRef}>
+								{loading ? <Spinner variant="primary" text="Mentés" /> : "Mentés"}
 							</Button>
-						</Link>
-						<Button type="submit" variant="accent" ref={submitButtonRef}>
-							{loading ? <Spinner variant="primary" text="Mentés" /> : "Mentés"}
-						</Button>
+						</FormButtons>
 					</Section>
 				</form>
 			</Page>

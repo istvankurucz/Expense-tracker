@@ -1,0 +1,7 @@
+.newGroup__data__alert {
+	margin-bottom: 2rem;
+}
+
+.newGroup__data__p:not(:last-child) {
+	margin-bottom: 1rem;
+}

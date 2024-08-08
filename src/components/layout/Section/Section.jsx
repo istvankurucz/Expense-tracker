@@ -8,7 +8,7 @@ function Section({
 	maxWidth = "1200px",
 	variant = "primary",
 	py = "2rem",
-	className,
+	className = "",
 	children,
 }) {
 	return (
@@ -16,7 +16,8 @@ function Section({
 			<Container
 				maxWidth={maxWidth}
 				centered
-				className={`section__container${className ? ` ${className}` : ""}`}>
+				className={`section__container${className !== "" ? ` ${className}` : ""}`}
+			>
 				{children}
 			</Container>
 		</section>

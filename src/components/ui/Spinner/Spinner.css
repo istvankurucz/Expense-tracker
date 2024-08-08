@@ -1,5 +1,5 @@
 .spinner {
-	display: flex;
+	display: inline-flex;
 	gap: 2rem;
 	align-items: center;
 }
@@ -51,5 +51,11 @@
 
 .spinner--text {
 	--color: var(--text-color);
+}
+/* #endregion */
+
+/* #region Types */
+.spinner--centered {
+	margin-inline: auto;
 }
 /* #endregion */

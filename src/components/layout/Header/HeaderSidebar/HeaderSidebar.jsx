@@ -61,6 +61,9 @@ function HeaderSidebar({ show, setShow }) {
 						{showGroupSubmenu && (
 							<ul className="headerSidebar__submenu">
 								<li>
+									<Link to="/groups">Összes</Link>
+								</li>
+								<li>
 									<Link to="/">Csoport 1</Link>
 								</li>
 								<li>

@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useStateValue } from "../../contexts/Context API/StateProvider";
 import useTransactions from "../../hooks/transaction/useTransactions";
+import { Link } from "react-router-dom";
+import Spinner from "../../components/ui/Spinner/Spinner";
 import Page from "../../components/layout/Page/Page";
 import Section from "../../components/layout/Section/Section";
 import TabSelect from "../../components/ui/TabSelect/TabSelect";
 import Chart from "../../components/ui/Chart/Chart";
 import NoTransaction from "../../components/layout/Section/NoTransaction/NoTransaction";
 import Transaction from "../../components/ui/Transaction/Transaction";
-import UserLoadingFrame from "../../components/layout/UserLoadingFrame/UserLoadingFrame";
+import UserLoadingFrame from "../../components/layout/LoadingFrame/UserLoadingFrame/UserLoadingFrame";
 import "./Home.css";
-import { Link } from "react-router-dom";
 
 const reportItems = ["Hónap", "Kezdetektől"];
 const pieLegend = [
@@ -30,7 +31,7 @@ const pieLegend = [
 function Home() {
 	// States
 	const [{ user }] = useStateValue();
-	const { transactions } = useTransactions(5);
+	const { transactions, transactionsLoading } = useTransactions(5);
 	const [index, setIndex] = useState(0);
 	const [showCaption, setShowCaption] = useState(true);
 
@@ -224,28 +225,34 @@ function Home() {
 						</Link>
 					</Section.Title>
 
-					<div className="home__transactions__container">
-						{transactions.map((transaction, i) => (
-							<>
-								<Transaction
-									key={transaction.id}
-									category={transaction.category}
-									type={transaction.type}
-									date={transaction.date.toLocaleDateString().replaceAll(" ", "")}
-									group={transaction.group ?? "Group 1"}
-									user={transaction.user}
-									name={transaction.name}
-									amount={transaction.amount}
-									comment={transaction.comment}
-								/>
-								{i !== transactions.length - 1 && (
-									<hr className="home__transactions__divider" />
-								)}
-							</>
-						))}
-					</div>
-
-					{transactions.length === 0 && <NoTransaction />}
+					{transactionsLoading ? (
+						<div className="home__transactions__loading">
+							<Spinner size="5rem" text="Legutóbbi tranzakciók betöltése" />
+						</div>
+					) : transactions.length === 0 ? (
+						<NoTransaction />
+					) : (
+						<div className="home__transactions__container">
+							{transactions.map((transaction, i) => (
+								<>
+									<Transaction
+										key={transaction.id}
+										category={transaction.category}
+										type={transaction.type}
+										date={transaction.date.toLocaleDateString().replaceAll(" ", "")}
+										group={transaction.group ?? "Group 1"}
+										user={transaction.user}
+										name={transaction.name}
+										amount={transaction.amount}
+										comment={transaction.comment}
+									/>
+									{i !== transactions.length - 1 && (
+										<hr className="home__transactions__divider" />
+									)}
+								</>
+							))}
+						</div>
+					)}
 				</Section>
 			</Page>
 		</UserLoadingFrame>

@@ -20,7 +20,7 @@
 .button--primary {
 	--_text-color: var(--text-color);
 	--bg-color: var(--primary-color);
-	--hover-color: var(--primary-color-dark);
+	--hover-color: var(--secondary-color);
 }
 
 .button--secondary {

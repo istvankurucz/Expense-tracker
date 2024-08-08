@@ -1,0 +1,7 @@
+.joinGroup__alert {
+	margin-bottom: 2rem;
+}
+
+.joinGroup__p:not(:last-child) {
+	margin-bottom: 1rem;
+}

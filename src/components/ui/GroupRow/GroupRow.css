@@ -1,0 +1,16 @@
+.groupRow {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	text-decoration: none;
+	color: var(--text-color);
+	padding: 0.5rem 1.5rem;
+}
+
+.groupRow__admin {
+	color: var(--info-color);
+}
+
+.groupRow__arrow {
+	margin-left: auto;
+}

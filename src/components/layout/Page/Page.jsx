@@ -3,13 +3,13 @@ import usePageMinHeight from "../../../hooks/dom/usePageMinHeight";
 import PageTitle from "./PageTitle/PageTitle";
 import "./Page.css";
 
-function Page({ className, children }) {
+function Page({ className = "", children }) {
 	const minHeightString = usePageMinHeight();
 
 	return (
 		<main
 			style={{ "--min-height": minHeightString }}
-			className={`page${className ? ` ${className}` : ""}`}
+			className={`page${className !== "" ? ` ${className}` : ""}`}
 		>
 			{children}
 		</main>
