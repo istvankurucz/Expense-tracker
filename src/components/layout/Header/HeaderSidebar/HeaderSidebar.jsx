@@ -6,6 +6,7 @@ import {
 	faAngleDoubleLeft,
 	faAngleDown,
 	faHouse,
+	faPlus,
 	faUser,
 	faUsers,
 } from "@fortawesome/free-solid-svg-icons";
@@ -13,10 +14,12 @@ import Brand from "../../../ui/Brand/Brand";
 import Button from "../../../ui/Button/Button";
 import Header from "../Header";
 import "./HeaderSidebar.css";
+import IconLink from "../../../ui/IconLink/IconLink";
 
 function HeaderSidebar({ show, setShow }) {
 	// States
-	const [showSubmenu, setShowSubmenu] = useState(false);
+	const [showGroupSubmenu, setShowGroupSubmenu] = useState(false);
+	const [showProfileSubmenu, setShowProfileSubmenu] = useState(false);
 
 	return (
 		<div className={`headerSidebar${show ? " headerSidebar--show" : ""}`}>
@@ -28,7 +31,8 @@ function HeaderSidebar({ show, setShow }) {
 					outlined
 					icon
 					className="headerSidebar__hide"
-					onClick={() => setShow(false)}>
+					onClick={() => setShow(false)}
+				>
 					<FontAwesomeIcon icon={faAngleDoubleLeft} />
 				</Button>
 			</div>
@@ -44,19 +48,43 @@ function HeaderSidebar({ show, setShow }) {
 						</Link>
 					</li>
 					<li>
-						<Link to="/" title="Csoportok">
+						<Link
+							to=""
+							title="Csoportok"
+							onClick={() => setShowGroupSubmenu((show) => !show)}
+						>
 							<FontAwesomeIcon icon={faUsers} />
 							Csoportok
+							<FontAwesomeIcon icon={faAngleDown} />
 						</Link>
+
+						{showGroupSubmenu && (
+							<ul className="headerSidebar__submenu">
+								<li>
+									<Link to="/">Csoport 1</Link>
+								</li>
+								<li>
+									<Link to="/">Csoport 2</Link>
+								</li>
+								<li>
+									<Link to="/">Csoport 3</Link>
+								</li>
+								<li className="header__menu__item--accent">
+									<IconLink to="/new-group">
+										<FontAwesomeIcon icon={faPlus} /> Új csoport
+									</IconLink>
+								</li>
+							</ul>
+						)}
 					</li>
 					<li>
-						<Link to="/" title="Profil" onClick={() => setShowSubmenu((show) => !show)}>
+						<Link to="" title="Profil" onClick={() => setShowProfileSubmenu((show) => !show)}>
 							<FontAwesomeIcon icon={faUser} />
 							Profil
 							<FontAwesomeIcon icon={faAngleDown} />
 						</Link>
 
-						{showSubmenu && (
+						{showProfileSubmenu && (
 							<ul className="headerSidebar__submenu">
 								<li>
 									<Link to="/">Adataim</Link>

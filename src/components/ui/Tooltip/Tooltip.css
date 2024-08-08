@@ -1,0 +1,74 @@
+.tooltip {
+	--_text-color: var(--primary-color);
+	--bg-color: var(--text-color);
+
+	width: max-content;
+	max-width: 10rem;
+	display: none;
+	font-size: var(--fs-s);
+	color: var(--_text-color);
+	background-color: var(--bg-color);
+	border-radius: var(--br);
+	box-shadow: 0.1rem 0.1rem 0.5rem var(--bg-color);
+	padding: 0.5rem 0.75rem;
+	position: absolute;
+	bottom: calc(100% + 0.25rem);
+	left: 50%;
+	translate: -50% 0;
+	z-index: 5;
+}
+.tooltip::after {
+	--size: 0.5rem;
+
+	content: "";
+	width: var(--size);
+	height: var(--size);
+	background-color: var(--bg-color);
+	position: absolute;
+	left: 50%;
+	bottom: calc(-0.5 * var(--size));
+	bottom: 0;
+	translate: -50% 50%;
+	rotate: 45deg;
+}
+
+.tooltip--show {
+	display: block;
+}
+
+/* #region Variants */
+.tooltip--dark {
+	--_text-color: var(--primary-color);
+	--bg-color: var(--text-color);
+}
+
+.tooltip--primary {
+	--_text-color: var(--text-color);
+	--bg-color: var(--primary-color);
+}
+
+.tooltip--secondary {
+	--_text-color: var(--text-color);
+	--bg-color: var(--secondary-color);
+}
+
+.tooltip--info {
+	--_text-color: var(--text-color);
+	--bg-color: var(--info-color);
+}
+
+.tooltip--accent {
+	--_text-color: var(--primary-color);
+	--bg-color: var(--accent-color);
+}
+
+.tooltip--success {
+	--_text-color: var(--primary-color);
+	--bg-color: var(--success-color);
+}
+
+.tooltip--danger {
+	--_text-color: var(--primary-color);
+	--bg-color: var(--danger-color);
+}
+/* #endregion */

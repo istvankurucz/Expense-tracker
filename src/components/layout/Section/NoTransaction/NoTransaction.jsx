@@ -13,7 +13,7 @@ function NoTransaction() {
 				</p>
 			</AlertSection.Text>
 
-			<AlertSection.Button link="/">Új tranzakció</AlertSection.Button>
+			<AlertSection.Button link="/new-transaction">Új tranzakció</AlertSection.Button>
 		</AlertSection>
 	);
 }

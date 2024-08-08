@@ -13,20 +13,19 @@ import CategorySelect from "../../components/form/Select/CategorySelect/Category
 import categories from "../../assets/categories";
 import Select from "../../components/form/Select/Select";
 import Spinner from "../../components/ui/Spinner/Spinner";
-import UserLoading from "../../components/ui/UserLoading/UserLoading";
-import NoUser from "../../components/layout/Section/NoUser/NoUser";
 import disableSubmitButton from "../../utils/form/disableSubmitButton";
 import enableSubmitButton from "../../utils/form/enableSubmitButton";
+import UserLoadingFrame from "../../components/layout/UserLoadingFrame/UserLoadingFrame";
 import "./NewTransaction.css";
 
 const typeSelectItems = [
 	{
 		type: "expense",
-		text: "Kiadás",
+		text: "kiadás",
 	},
 	{
 		type: "income",
-		text: "Bevétel",
+		text: "bevétel",
 	},
 ];
 
@@ -34,7 +33,7 @@ const groupSelectItems = ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5"]
 
 function NewTransaction() {
 	// States
-	const [{ user, userLoading }, dispatch] = useStateValue();
+	const [{ user }, dispatch] = useStateValue();
 	const [typeIndex, setTypeIndex] = useState(0);
 	const [categoryIndex, setCategoryIndex] = useState(0);
 	const [groupIndex, setGroupIndex] = useState(0);
@@ -115,102 +114,96 @@ function NewTransaction() {
 	}
 
 	return (
-		<Page className="newTransaction">
-			<UserLoading />
+		<UserLoadingFrame>
+			<Page className="newTransaction">
+				<Section maxWidth={maxWidth} id="newTransactionWelcome">
+					<Page.Title>Új {typeSelectItems[typeIndex].text}</Page.Title>
 
-			{(user == null) & !userLoading ? (
-				<NoUser />
-			) : (
-				<>
-					<Section maxWidth={maxWidth} id="newTransactionWelcome">
-						<Page.Title>Új {typeSelectItems[typeIndex].text}</Page.Title>
+					<SwitchSelect
+						items={typeSelectItems.map((item) => item.text)}
+						index={typeIndex}
+						setIndex={setTypeIndex}
+						className="newTransaction__type__select"
+					/>
+				</Section>
 
-						<SwitchSelect
-							items={typeSelectItems.map((item) => item.text)}
-							index={typeIndex}
-							setIndex={setTypeIndex}
-							className="newTransaction__type__select"
+				<form onSubmit={saveTransaction}>
+					<Section maxWidth={maxWidth} id="newTransactionData">
+						<Section.Title>Adatok</Section.Title>
+
+						<div className="newTransaction__inputs">
+							<CategorySelect
+								items={validCategories}
+								label="Kategória"
+								index={categoryIndex}
+								setIndex={setCategoryIndex}
+							/>
+							<Input
+								label="Megnevezés"
+								type="text"
+								placeholder="Pl. Lidl bevásárlás"
+								id="newTransactionName"
+								fullW
+								required
+								ref={nameRef}
+							/>
+							<Input
+								label="Összeg"
+								type="number"
+								placeholder="Ft"
+								min={0}
+								id="newTransactionAmount"
+								fullW
+								required
+								ref={amountRef}
+							/>
+							<Input
+								label="Dátum"
+								type="date"
+								id="newTransactionDate"
+								defaultValue={defaultDate}
+								fullW
+								required
+								ref={dateRef}
+							/>
+
+							<Textarea
+								label="Megjegyzés"
+								id="newTransactionComment"
+								placeholder="Bármilyen gondolat, amit fontos feljegyezni"
+								rows={3}
+								fullW
+								ref={commentRef}
+							/>
+						</div>
+					</Section>
+
+					<Section maxWidth={maxWidth} variant="secondary" id="newTransactionSelectGroup">
+						<Section.Title>Csoport megadása</Section.Title>
+
+						<Select
+							label="Csoport"
+							id="newTransactionGroup"
+							items={groupSelectItems}
+							index={groupIndex}
+							setIndex={setGroupIndex}
+							required
 						/>
 					</Section>
 
-					<form onSubmit={saveTransaction}>
-						<Section maxWidth={maxWidth} id="newTransactionData">
-							<Section.Title>Adatok</Section.Title>
-
-							<div className="newTransaction__inputs">
-								<CategorySelect
-									items={validCategories}
-									label="Kategória"
-									index={categoryIndex}
-									setIndex={setCategoryIndex}
-								/>
-								<Input
-									label="Megnevezés"
-									type="text"
-									placeholder="Pl. Lidl bevásárlás"
-									id="newTransactionName"
-									fullW
-									required
-									ref={nameRef}
-								/>
-								<Input
-									label="Összeg"
-									type="number"
-									placeholder="Ft"
-									min={0}
-									id="newTransactionAmount"
-									fullW
-									required
-									ref={amountRef}
-								/>
-								<Input
-									label="Dátum"
-									type="date"
-									id="newTransactionDate"
-									defaultValue={defaultDate}
-									fullW
-									required
-									ref={dateRef}
-								/>
-
-								<Textarea
-									label="Megjegyzés"
-									id="newTransactionComment"
-									placeholder="Bármilyen gondolat, amit fontos feljegyezni"
-									rows={3}
-									fullW
-									ref={commentRef}
-								/>
-							</div>
-						</Section>
-
-						<Section maxWidth={maxWidth} variant="secondary" id="newTransactionSelectGroup">
-							<Section.Title>Csoport megadása</Section.Title>
-
-							<Select
-								label="Csoport"
-								id="newTransactionGroup"
-								items={groupSelectItems}
-								index={groupIndex}
-								setIndex={setGroupIndex}
-								required
-							/>
-						</Section>
-
-						<Section maxWidth={maxWidth} id="newTransactionSubmit">
-							<Link to="/">
-								<Button variant="info" outlined tabIndex={-1}>
-									Mégse
-								</Button>
-							</Link>
-							<Button type="submit" variant="accent" ref={submitButtonRef}>
-								{loading ? <Spinner variant="primary" text="Mentés" /> : "Mentés"}
+					<Section maxWidth={maxWidth} id="newTransactionSubmit">
+						<Link to="/">
+							<Button variant="info" outlined tabIndex={-1}>
+								Mégse
 							</Button>
-						</Section>
-					</form>
-				</>
-			)}
-		</Page>
+						</Link>
+						<Button type="submit" variant="accent" ref={submitButtonRef}>
+							{loading ? <Spinner variant="primary" text="Mentés" /> : "Mentés"}
+						</Button>
+					</Section>
+				</form>
+			</Page>
+		</UserLoadingFrame>
 	);
 }
 

@@ -29,6 +29,9 @@
 .header__menu > li {
 	position: relative;
 }
+.header__menu__item--accent > a {
+	color: var(--accent-color) !important;
+}
 
 .header__menu > li > a {
 	display: inline-flex;

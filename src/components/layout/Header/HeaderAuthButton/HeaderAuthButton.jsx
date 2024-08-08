@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
 import { useStateValue } from "../../../../contexts/Context API/StateProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket, faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import signOutUser from "../../../../utils/user/signOutUser";
+import IconLink from "../../../ui/IconLink/IconLink";
 import "./HeaderAuthButton.css";
 
 function HeaderAuthButton() {
@@ -8,16 +10,18 @@ function HeaderAuthButton() {
 
 	if (user == null) {
 		return (
-			<Link to="/signin" className="headerAuthButton headerAuthButton--accent">
+			<IconLink to="/signin" className="headerAuthButton headerAuthButton--accent">
+				<FontAwesomeIcon icon={faArrowRightToBracket} />
 				Bejelentkezés
-			</Link>
+			</IconLink>
 		);
 	}
 
 	return (
-		<Link to="" className="headerAuthButton headerAuthButton--danger" onClick={signOutUser}>
+		<IconLink to="" className="headerAuthButton headerAuthButton--danger" onClick={signOutUser}>
+			<FontAwesomeIcon icon={faArrowRightFromBracket} />
 			Kijelentkezés
-		</Link>
+		</IconLink>
 	);
 }
 

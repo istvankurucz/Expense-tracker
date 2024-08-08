@@ -2,6 +2,7 @@
 	display: flex;
 	gap: 2rem;
 	align-items: center;
+	padding-block: 0.5rem;
 }
 /* #region Types */
 .transaction--income {
@@ -33,6 +34,28 @@
 }
 .transaction__group:hover {
 	text-decoration: underline;
+}
+
+.transaction__name {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.transaction__name__text {
+	max-height: 3.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.transaction__comment {
+	position: relative;
+}
+
+.transaction__hasComment {
+	width: 1rem;
+	height: 1rem;
+	color: var(--info-color);
+	cursor: pointer;
 }
 
 .transaction__amount {

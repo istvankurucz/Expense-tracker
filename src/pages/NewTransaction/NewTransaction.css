@@ -8,6 +8,10 @@
 	margin-left: auto;
 }
 
+.newTransaction__type__select button {
+	text-transform: capitalize;
+}
+
 .newTransaction__inputs {
 	display: flex;
 	flex-direction: column;

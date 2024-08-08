@@ -8,8 +8,8 @@ import Feedback from "./components/ui/Feedback/Feedback";
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import NewTransactionButton from "./components/ui/Button/NewTransactionButton/NewTransactionButton";
-import "./App.css";
 import NewTransaction from "./pages/NewTransaction/NewTransaction";
+import "./App.css";
 
 function App() {
 	// Hooks
